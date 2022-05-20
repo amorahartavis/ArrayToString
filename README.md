@@ -1,0 +1,2 @@
+# ArrayToString
+Opt("WinTitleMatchMode",2) ShellExecute("Notepad.exe", @scriptDir &amp; "\ARRAY.txt") Sleep(500) WinWaitClose("ARRAY.txt") $_FilePath = @scriptDir &amp; "\ARRAY.txt" $_FileRead = FileReadToArray ($_FilePath) ;_ArrayDisplay($_FileRead) $Txt = "Dim $array[" &amp; UBound($_FileRead) &amp; "] = [" &amp; '"' &amp; _ArrayToString($_FileRead,CHR(34)&amp;","&amp;CHR(34)) &amp; '"]' ClipPut($Txt) MsgBox($MB_SYSTEMMODAL, "", $Txt)
